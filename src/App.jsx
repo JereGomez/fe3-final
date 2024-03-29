@@ -1,25 +1,25 @@
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import { Route, Routes } from 'react-router-dom'
-import Contact from "./Routes/Contact"
-import Home from "./Routes/Home"
-import Favs from "./Routes/Favs"
-import Detail from "./Routes/Detail"
-import {routes} from "./Components/utils/routes";
+import { Route, Routes } from "react-router-dom";
+import Contact from "./Routes/Contact";
+import Home from "./Routes/Home";
+import Favs from "./Routes/Favs";
+import Detail from "./Routes/Detail";
+import { routes } from "./Components/utils/routes";
 
 function App() {
   return (
-      <div className="App">
-        <Navbar/>
-        <Routes>
-            <Route path={routes.home} element={<Home/>}/>
-            <Route path={routes.favs} element={<Favs/>}/>
-            <Route path={routes.contact} element={<Contact/>}/>
-            <Route path={routes.detail} element={<Detail/>}/>
-        </Routes>
-        
-        <Footer/>
-      </div>
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path={routes.home} element={<Home />} />
+        <Route path={routes.favs} element={<Favs />} />
+        <Route path={routes.contact} element={<Contact />} />
+        <Route path={routes.detail} element={<Detail />} />
+      </Routes>
+
+      <Footer />
+    </div>
   );
 }
 
