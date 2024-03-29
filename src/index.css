@@ -5,49 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
 
 h1{
   text-align: center;
 }
 
-nav {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 1rem;
-  background-color: #dddddd;
-  padding: 0rem;
-}
-  nav h3{
-    justify-content: flex-start;
-  }
-
-nav div{
-  display: flex;
-  width: 80%;
-  justify-content: flex-end;
-  padding: 1rem;
-  background-color: #dddddd;
-  padding: 0rem;
-}
-
-nav div button{
-  border: none;
-  background-color: #dddddd;
-}
 a{
   color: #000;
   text-decoration: none;
@@ -58,43 +27,81 @@ a:hover{
   color: rgb(136, 136, 136);
 } 
 
-footer {
+/*NAV*/
+nav{
   display: flex;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  width: 100vw;
+  justify-content: flex-start;
+  background: #ebebeb;
 }
 
-footer > img{
-  width: 200px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.navbar-routes {
+  list-style: none;
   margin: 0;
-  
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem
-
+  padding: 0 15px;
+  display: flex;
 }
 
-footer .logo{
+.navbar-routes li {
+  margin-right: 20px;
+}
+
+.navbar-routes li:last-child {
+  margin-right: 0; 
+}
+
+.theme-button {
+  padding:8px;
+  background-color: #000000; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-button.dark-mode {
+  background-color: white; 
+  color: black;
+}
+
+.dark .navbar {
   background-color: black;
-  width: 20px;
-  height: 20px;
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+.dark .navbar-routes li a {
+  color: white;
 }
 
+/*FAV*/
+.favButton{
+  background-color: rgba(136, 136, 136, 0.116);
+  color: gold;
+  font-size: 22px;
+  padding: 5px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+/*CARD*/
 .card{
   display: flex;
   justify-content: space-around;
@@ -103,10 +110,12 @@ form{
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  font-size: 10px;
+  background: #fff;
+  text-align: center;
 }
-
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+.card button{
+  width: 220px;
 }
 
 .card-grid{
@@ -119,6 +128,58 @@ form{
   margin: 0 auto;
 }
 
+/*FORM*/
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 250px; 
+}
+
+.form input {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  width: 420px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.form p {
+  margin: 5px 0; 
+}
+
+/*DETAIL*/
+.detail-container{
+  margin-bottom: 280px;
+}
 table {
  border-collapse: collapse;
     border-spacing: 0;
@@ -138,10 +199,39 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+/*DARK MODE*/
 .dark{
   background-color: #12121296;
   color: white;
 }
 .dark > a {
   color: white;
+}
+
+/*FOOTER*/
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ebebeb; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-top: 15vh;
+}
+
+.footer-left img {
+  width: 300px;
+  height: 70px;
+}
+
+.footer-right a {
+  margin-right: 10px;
+}
+
+.footer-right img {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 15px;
 }
